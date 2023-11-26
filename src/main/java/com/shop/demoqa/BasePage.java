@@ -13,7 +13,12 @@ import java.time.Duration;
  * Represents the base page.
  */
 public class BasePage {
-    WebDriver driver;
+
+    protected WebDriver driver;
+
+    public BasePage(WebDriver driver){
+        this.driver = driver;
+    }
 
 
     /**
@@ -39,4 +44,11 @@ public class BasePage {
         findElement(locator).sendKeys(text);
     }
 
+    /**
+     * The process waits until the locator appears.
+     */
+    public void waitUntilItemShowsUp(By locator){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 }
