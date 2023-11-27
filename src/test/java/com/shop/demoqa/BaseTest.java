@@ -8,7 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
     public WebDriver driver;
     public String BASE_URL = "https://shop.demoqa.com/";
-    public String LOGIN_PATH = "my-account/";
+    public String LOGIN_AND_REGISTER_PATH = "my-account/";
+    public String REGISTER_PATH = "";
 
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
@@ -27,9 +28,8 @@ public class BaseTest {
     public void navigateToHomePage() {
         driver.get(BASE_URL);
     }
-
-    public void navigateToLoginPage() {
-        driver.get(BASE_URL + LOGIN_PATH);
+    public void navigateToLoginAndRegisterPage() {
+        driver.get(BASE_URL + LOGIN_AND_REGISTER_PATH);
     }
 
     public void tearDown() {
