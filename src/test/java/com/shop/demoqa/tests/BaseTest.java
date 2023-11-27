@@ -1,4 +1,4 @@
-package com.shop.demoqa;
+package com.shop.demoqa.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,6 @@ public class BaseTest {
     public WebDriver driver;
     public String BASE_URL = "https://shop.demoqa.com/";
     public String LOGIN_AND_REGISTER_PATH = "my-account/";
-    public String REGISTER_PATH = "";
 
     public void setUp() {
         ChromeOptions options = new ChromeOptions();

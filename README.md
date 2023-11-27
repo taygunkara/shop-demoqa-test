@@ -11,6 +11,8 @@
 
 ```
 - Should Be Able To Login With Valid Username and Valid Password
+- Should Not Be Able To Login With Empty Username
+- Should Not Be Able To Login With Empty Password
 - Should Not Be Able To Login With Valid Username and Invalid Password
 - Should Not Be Able To Login With Invalid Username and Valid Password
 - Should Not Be Able To Login With Invalid Username and Invalid Password

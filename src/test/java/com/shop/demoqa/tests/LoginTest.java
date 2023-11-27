@@ -1,16 +1,15 @@
-package com.shop.demoqa.LoginTest;
+package com.shop.demoqa.tests;
 
-import com.shop.demoqa.BaseTest;
-import com.shop.demoqa.LoginPage.LoginPage;
+import com.shop.demoqa.pages.LoginPage;
+import com.shop.demoqa.testdata.LoginTestData;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LoginTests extends BaseTest {
+public class LoginTest extends BaseTest {
 
     private LoginPage loginPage;
 
-    // TODO CHECK ALL PROCESS (WEBSITE DOWN NOW)
     @BeforeEach
     public void startTests(){
         setUp();
@@ -22,37 +21,48 @@ public class LoginTests extends BaseTest {
     @DisplayName("Verify successful login with a valid username and password.")
     @Order(1)
     public void ShouldBeAbleToLoginWithValidUsernameAndValidPassword(){
-        loginPage.setValidLogin();
-
+        loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.VALID_PASSWORD);
         // FIXME ASSERT WILL CHANGE AFTER CORRECT USERNAME & PASSWORD
-
         assertFalse(loginPage.isLoggedIn());
         //assertTrue(loginPage.isLoggedIn());
+    }
+
+    @Test
+    @DisplayName("Verify login failure with an empty username.")
+    @Order(2)
+    public void ShouldNotBeAbleToLoginWithEmptyUsername(){
+        loginPage.setLogin(" ", LoginTestData.VALID_PASSWORD);
+    }
+
+    @Test
+    @DisplayName("Verify login failure with an empty password.")
+    @Order(3)
+    public void ShouldNotBeAbleToLoginWithEmptyPassword(){
+        loginPage.setLogin(LoginTestData.VALID_USERNAME, " ");
 
     }
 
     @Test
     @DisplayName("Verify login failure with a valid username and an invalid password.")
-    @Order(2)
+    @Order(4)
     public void ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword(){
-        loginPage.setValidUsernameInvalidPassword();
+        loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.INVALID_PASSWORD);
         assertFalse(loginPage.isLoggedIn());
-
     }
 
     @Test
     @DisplayName("Verify login failure with an invalid username and an valid password.")
-    @Order(3)
+    @Order(5)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword(){
-        loginPage.setInvalidUsernameValidPassword();
+        loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.VALID_PASSWORD);
         assertFalse(loginPage.isLoggedIn());
     }
 
     @Test
     @DisplayName("Verify login failure with an invalid username and an invalid password.")
-    @Order(4)
+    @Order(6)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword(){
-        loginPage.setInvalidUsernameInvalidPassword();
+        loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.INVALID_PASSWORD);
         assertFalse(loginPage.isLoggedIn());
     }
 

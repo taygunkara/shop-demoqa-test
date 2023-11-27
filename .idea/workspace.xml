@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c897b3-e0d0-42c1-8590-ec8ce92856b6" name="Changes" comment="Added LoginTests class with LoginPage and updated BasePage">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/RegisterPage/RegisterPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/RegisterTest/RegisterTests.java" afterDir="false" />
+    <list default="true" id="65c897b3-e0d0-42c1-8590-ec8ce92856b6" name="Changes" comment="Minor updates">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/LoginTest/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/LoginTest/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/RegisterPage/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/LoginTest/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/tests/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/RegisterTest/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/RegisterTest/RegisterTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,19 +58,25 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/taygun/IdeaProjects/shop-demoqa-test",
+    "last_opened_file_path": "/home/taygun/Dropbox/JET-master",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.shop.demoqa.tests" />
+      <recent name="com.shop.demoqa.pages" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.LoginTests.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword">
     <configuration name="LoginTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shop.demoqa.LoginTest.*" />
+          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,7 +91,7 @@
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shop.demoqa.LoginTest.*" />
+          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,7 +107,7 @@
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shop.demoqa.LoginTest.*" />
+          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,14 +160,40 @@
       <option name="project" value="LOCAL" />
       <updated>1701020106768</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added RegisterTests class with RegisterPage and updated BasePage">
+      <option name="closed" value="true" />
+      <created>1701094679652</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701094679652</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Minor updates">
+      <option name="closed" value="true" />
+      <created>1701094694199</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701094694199</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Minor updates">
+      <option name="closed" value="true" />
+      <created>1701094765164</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701094765164</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Create BasePage and BaseTest for reusable test infrastructure" />
     <MESSAGE value="Added LoginTests class with LoginPage and updated BasePage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added LoginTests class with LoginPage and updated BasePage" />
+    <MESSAGE value="Added RegisterTests class with RegisterPage and updated BasePage" />
+    <MESSAGE value="Minor updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
