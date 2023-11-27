@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c897b3-e0d0-42c1-8590-ec8ce92856b6" name="Changes" comment="Minor updates">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="65c897b3-e0d0-42c1-8590-ec8ce92856b6" name="Changes" comment="Added RegisterPage.java, RegisterTest.java files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/RegisterPage/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/LoginTest/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/tests/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/RegisterTest/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/RegisterTest/RegisterTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/testdata/LoginTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/testdata/LoginTestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/tests/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -58,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/taygun/Dropbox/JET-master",
+    "last_opened_file_path": "/home/taygun/Downloads/defacto_ui_test",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -71,8 +68,8 @@
       <recent name="com.shop.demoqa.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTests.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword">
-    <configuration name="LoginTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginTest.ShouldNotBeAbleToLoginWithEmptyPassword">
+    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithEmptyPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -80,30 +77,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shop.demoqa.LoginTest" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.LoginTest.LoginTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTests.ShouldBeAbleToLoginWithValidUsernameAndValidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shop-demoqa-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shop.demoqa.LoginTest" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.LoginTest.LoginTests" />
-      <option name="METHOD_NAME" value="ShouldBeAbleToLoginWithValidUsernameAndValidPassword" />
+      <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
+      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithEmptyPassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithEmptyUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -111,8 +93,56 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shop.demoqa.LoginTest" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.LoginTest.LoginTests" />
+      <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
+      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithEmptyUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-demoqa-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
+      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-demoqa-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
+      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop-demoqa-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shop.demoqa.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
       <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -121,9 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginTests.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" />
-        <item itemvalue="JUnit.LoginTests.ShouldBeAbleToLoginWithValidUsernameAndValidPassword" />
-        <item itemvalue="JUnit.LoginTests" />
+        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithEmptyPassword" />
+        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword" />
+        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword" />
+        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" />
+        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithEmptyUsername" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +216,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701094765164</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added new login tests and structure renewed.&#10;- LoginTests.java, LoginPage.java was updated, LoginTestData.java added.&#10;- Project structure was updated for better organization.">
+      <option name="closed" value="true" />
+      <created>1701106057417</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701106057417</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added RegisterPage.java, RegisterTest.java files.">
+      <option name="closed" value="true" />
+      <created>1701106115749</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701106115749</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -193,7 +241,9 @@
     <MESSAGE value="Added LoginTests class with LoginPage and updated BasePage" />
     <MESSAGE value="Added RegisterTests class with RegisterPage and updated BasePage" />
     <MESSAGE value="Minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
+    <MESSAGE value="Added new login tests and structure renewed.&#10;- LoginTests.java, LoginPage.java was updated, LoginTestData.java added.&#10;- Project structure was updated for better organization." />
+    <MESSAGE value="Added RegisterPage.java, RegisterTest.java files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added RegisterPage.java, RegisterTest.java files." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

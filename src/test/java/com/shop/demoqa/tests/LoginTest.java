@@ -4,6 +4,7 @@ import com.shop.demoqa.pages.LoginPage;
 import com.shop.demoqa.testdata.LoginTestData;
 import org.junit.jupiter.api.*;
 
+import static com.google.common.base.Predicates.equalTo;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginTest extends BaseTest {
@@ -32,6 +33,7 @@ public class LoginTest extends BaseTest {
     @Order(2)
     public void ShouldNotBeAbleToLoginWithEmptyUsername(){
         loginPage.setLogin(" ", LoginTestData.VALID_PASSWORD);
+        assertEquals(LoginTestData.MISSING_USERNAME_MESSAGE, loginPage.getInvalidLoginMessage());
     }
 
     @Test
@@ -39,6 +41,7 @@ public class LoginTest extends BaseTest {
     @Order(3)
     public void ShouldNotBeAbleToLoginWithEmptyPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, " ");
+        assertEquals(LoginTestData.MISSING_PASSWORD_MESSAGE, loginPage.getInvalidLoginMessage());
 
     }
 
@@ -47,7 +50,7 @@ public class LoginTest extends BaseTest {
     @Order(4)
     public void ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.INVALID_PASSWORD);
-        assertFalse(loginPage.isLoggedIn());
+        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginMessage());
     }
 
     @Test
@@ -55,7 +58,7 @@ public class LoginTest extends BaseTest {
     @Order(5)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword(){
         loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.VALID_PASSWORD);
-        assertFalse(loginPage.isLoggedIn());
+        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginMessage());
     }
 
     @Test
@@ -63,7 +66,7 @@ public class LoginTest extends BaseTest {
     @Order(6)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword(){
         loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.INVALID_PASSWORD);
-        assertFalse(loginPage.isLoggedIn());
+        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginMessage());
     }
 
     @AfterEach

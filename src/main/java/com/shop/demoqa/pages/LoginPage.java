@@ -21,6 +21,8 @@ public class LoginPage extends BasePage {
     public final By loginButton = By.xpath("//button[@name='login']");
     public final By invalidMessage = By.xpath("//a[@title='Password Lost and Found']");
 
+    //ul[@class='woocommerce-error']
+    public final By msg = By.xpath("//ul[@class='woocommerce-error']");
     public final String invalidMessageTitle = "Lost your password";
 
 
@@ -38,8 +40,8 @@ public class LoginPage extends BasePage {
      * Method for get error message.
      */
     public String getInvalidLoginMessage(){
-        waitUntilItemShowsUp(invalidMessage);
-        return findElement(invalidMessage).getText();
+        waitUntilItemShowsUp(msg);
+        return findElement(msg).getText();
     }
 
     /**
