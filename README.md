@@ -26,7 +26,7 @@
 - Should Not Be Able To Create An Account With Empty Email
 - Should Not Be Able To Create An Account With Empty Password
 - Should Not Be Able To Create An Account With Same Email
-- Should Not Be Able To Create An Account With Week Password
+- Should Not Be Able To Create An Account With Weak Password
 - ? Should Be Able To Update User Information
 - ? Should Be Able To Delete User
 
