@@ -14,7 +14,7 @@ public class LoginTests extends BaseTest {
     @BeforeEach
     public void startTests(){
         setUp();
-        navigateToLoginPage();
+        navigateToLoginAndRegisterPage();
         loginPage = new LoginPage(driver);
     }
 
