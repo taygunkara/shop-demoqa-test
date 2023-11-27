@@ -1,11 +1,10 @@
-package com.shop.demoqa.RegisterTest;
+package com.shop.demoqa.tests;
 
-import com.shop.demoqa.BaseTest;
-import com.shop.demoqa.RegisterPage.RegisterPage;
+import com.shop.demoqa.pages.RegisterPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class RegisterTests extends BaseTest {
+public class RegisterTest extends BaseTest {
     private RegisterPage registerPage;
 
     @BeforeEach

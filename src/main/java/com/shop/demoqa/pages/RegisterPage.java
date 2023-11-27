@@ -1,6 +1,6 @@
-package com.shop.demoqa.RegisterPage;
+package com.shop.demoqa.pages;
 
-import com.shop.demoqa.BasePage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
