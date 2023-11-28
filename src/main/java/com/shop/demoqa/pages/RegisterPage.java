@@ -12,35 +12,30 @@ public class RegisterPage extends BasePage {
     public final By registrationUsernameInput = By.xpath("//input[@id='reg_username']");
     public final By registrationEmailInput = By.xpath("//input[@id='reg_email']");
     public final By registrationPasswordInput = By.xpath("//input[@id='reg_password']");
-    public final By registerButton = By.xpath("//button[@value='Register']");
+    public final By registerButton = By.xpath("//button[@name='register']");
+    public final By successMessage = By.xpath("//div[@class='woocommerce-MyAccount-content']//p[strong]");
+    public final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
 
-
-    // FIXME RENAME VARIABLES
-    public final String username = "username";
-    public final String email = "email@email.com";
-    public final String password = "password123";
-
-
-    // TODO SAME METHOD FOR LOGIN PAGE SO CREATE METHOD IN BASE OR IN MODEL PAGE
-    public void setUsername(String username) {
+    // FIXME CANT CLICK WHEN PASSWORD HINT OCCURS
+    public void createAnAccount(String username, String email, String password){
         type(registrationUsernameInput, username);
-    }
-    public void setEmail(String email) {
         type(registrationEmailInput, email);
-    }
-    public void setPassword(String password) {
         type(registrationPasswordInput, password);
-    }
-
-    public void setRegister(String username, String email, String password){
-        setUsername(username);
-        setEmail(email);
-        setPassword(password);
         clickElement(registerButton);
     }
 
-    public void setValidRegister(){
-        setRegister(username, email, password);
+    // FIXME REGISTER & LOGIN SAME GET MESSAGE PROCESS
+    public String getRegisterMessage(By messageLocator){
+        waitUntilItemShowsUp(messageLocator);
+        return findElement(messageLocator).getText();
+    }
+
+    public String getSuccessLoginMessage(){
+        return getRegisterMessage(successMessage);
+    }
+
+    public String getInvalidLoginMessage(){
+        return getRegisterMessage(errorMessage);
     }
 
 }
