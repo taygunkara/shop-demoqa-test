@@ -15,6 +15,7 @@ public class RegisterPage extends BasePage {
     public final By registerButton = By.xpath("//button[@name='register']");
     public final By successMessage = By.xpath("//div[@class='woocommerce-MyAccount-content']//p[strong]");
     public final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
+    public final By errorWeakPassword = By.cssSelector("div[class='woocommerce-password-strength short']");
 
     // FIXME CANT CLICK WHEN PASSWORD HINT OCCURS
     public void createAnAccount(String username, String email, String password){
@@ -30,12 +31,17 @@ public class RegisterPage extends BasePage {
         return findElement(messageLocator).getText();
     }
 
-    public String getSuccessLoginMessage(){
+    public String getSuccessRegisterMessage(){
         return getRegisterMessage(successMessage);
     }
 
-    public String getInvalidLoginMessage(){
+    public String getInvalidRegisterMessage(){
         return getRegisterMessage(errorMessage);
+    }
+
+    // FIXME RENAME
+    public String getWeakPasswordMessage(){
+        return getRegisterMessage(errorWeakPassword);
     }
 
 }

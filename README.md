@@ -25,9 +25,11 @@
 - Should Not Be Able To Create An Account With Empty Username
 - Should Not Be Able To Create An Account With Empty Email
 - Should Not Be Able To Create An Account With Empty Password
-- Should Not Be Able To Create An Account With Same Email
+- Should Not Be Able To Create An Account With Duplicated Email
 - Should Not Be Able To Create An Account With Weak Password
-- Should Be Able To Create An Account With Duplicated Username
+---------------------------------------------------------------------
+- Should Not Be Able To Create An Account With Duplicated Username
+- Should Not Be Able To Create An Account With Unsported Characters
 ```
 </details>
 
