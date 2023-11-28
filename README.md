@@ -4,8 +4,6 @@
 
 ## Tests
 
-
-
 <details>
   <summary>Login Tests</summary>
 
@@ -23,19 +21,17 @@
   <summary>Register Tests</summary>
 
 ```
-- Should Be Able To Create Account
+- Should Be Able To Create An Account
 - Should Not Be Able To Create An Account With Empty Username
 - Should Not Be Able To Create An Account With Empty Email
 - Should Not Be Able To Create An Account With Empty Password
 - Should Not Be Able To Create An Account With Same Email
 - Should Not Be Able To Create An Account With Weak Password
-- ? Should Be Able To Update User Information
-- ? Should Be Able To Delete User
-
-
+- Should Be Able To Create An Account With Duplicated Username
 ```
 </details>
 
+---
 
 ### Maven Libraries
 - [JUnit](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)
