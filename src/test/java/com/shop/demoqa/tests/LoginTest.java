@@ -4,7 +4,6 @@ import com.shop.demoqa.pages.LoginPage;
 import com.shop.demoqa.testdata.LoginTestData;
 import org.junit.jupiter.api.*;
 
-import static com.google.common.base.Predicates.equalTo;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginTest extends BaseTest {
@@ -23,9 +22,7 @@ public class LoginTest extends BaseTest {
     @Order(1)
     public void ShouldBeAbleToLoginWithValidUsernameAndValidPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.VALID_PASSWORD);
-        // FIXME ASSERT WILL CHANGE AFTER CORRECT USERNAME & PASSWORD
-        assertFalse(loginPage.isLoggedIn());
-        //assertTrue(loginPage.isLoggedIn());
+        assertEquals(LoginTestData.VALID_LOGIN_MESSAGE, loginPage.getSuccessLoginMessage());
     }
 
     @Test

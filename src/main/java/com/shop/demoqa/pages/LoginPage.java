@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-
-// FIXME METHOD NAMES SHOULD BE CLEARER THAN NOW
-
 /**
  * Represents the login page.
  */
@@ -19,11 +16,8 @@ public class LoginPage extends BasePage {
     public final By passwordInput = By.xpath("//input[@id='password']");
     public final By rememberMeInput = By.xpath("//input[@id='rememberme']");
     public final By loginButton = By.xpath("//button[@name='login']");
-    public final By invalidMessage = By.xpath("//a[@title='Password Lost and Found']");
-
-    //ul[@class='woocommerce-error']
-    public final By msg = By.xpath("//ul[@class='woocommerce-error']");
-    public final String invalidMessageTitle = "Lost your password";
+    public final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
+    public final By successMessage = By.xpath("//div[@class='woocommerce-MyAccount-content']//p[strong]");
 
 
     /**
@@ -37,18 +31,24 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * Method for get error message.
+     * Method for get message.
      */
-    public String getInvalidLoginMessage(){
-        waitUntilItemShowsUp(msg);
-        return findElement(msg).getText();
+    public String getLoginMessage(By messageLocator){
+        waitUntilItemShowsUp(messageLocator);
+        return findElement(messageLocator).getText();
     }
 
     /**
-     * Method for check the login.
+     * Method for get error login message.
      */
-    public Boolean isLoggedIn(){
-        return !getInvalidLoginMessage().equals(invalidMessageTitle);
+    public String getInvalidLoginMessage(){
+        return getLoginMessage(errorMessage);
     }
 
+    /**
+     * Method for get success login message.
+     */
+    public String getSuccessLoginMessage(){
+        return getLoginMessage(successMessage);
+    }
 }
