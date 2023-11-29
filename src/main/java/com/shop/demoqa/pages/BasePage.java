@@ -51,4 +51,12 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    static void delay() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

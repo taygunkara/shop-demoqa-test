@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Verify login failure with an empty username.")
     @Order(2)
     public void ShouldNotBeAbleToLoginWithEmptyUsername(){
-        loginPage.setLogin(" ", LoginTestData.VALID_PASSWORD);
+        loginPage.setLogin("", LoginTestData.VALID_PASSWORD);
         assertEquals(LoginTestData.MISSING_USERNAME_MESSAGE, loginPage.getInvalidLoginMessage());
     }
 
@@ -37,7 +37,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Verify login failure with an empty password.")
     @Order(3)
     public void ShouldNotBeAbleToLoginWithEmptyPassword(){
-        loginPage.setLogin(LoginTestData.VALID_USERNAME, " ");
+        loginPage.setLogin(LoginTestData.VALID_USERNAME, "");
         assertEquals(LoginTestData.MISSING_PASSWORD_MESSAGE, loginPage.getInvalidLoginMessage());
 
     }
