@@ -2,6 +2,7 @@ package com.shop.demoqa.pages;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +22,6 @@ public class BasePage {
     public BasePage(WebDriver driver){
         this.driver = driver;
     }
-
 
     /**
      * Find web element with expected conditions.
@@ -62,8 +62,15 @@ public class BasePage {
         }
     }
 
+    public void clickEnter(By locator){
+        findElement(locator).sendKeys(Keys.RETURN);
+    }
 
     public void clear(By locator){
         findElement(locator).clear();
+    }
+
+    public Boolean isDisplayed(By locator){
+        return findElement(locator).isDisplayed();
     }
 }
