@@ -4,7 +4,7 @@ package com.shop.demoqa.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-// TODO ADD DOCS
+// TODO ADD DOCS -- FIXME DOCS
 
 public class RegisterPage extends BasePage {
     public RegisterPage(WebDriver driver) {
@@ -19,10 +19,33 @@ public class RegisterPage extends BasePage {
     public final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
     public final By errorWeakPassword = By.cssSelector("div[class='woocommerce-password-strength short']");
 
-    public void setRegisterInfo(String username, String email, String password){
+    /**
+     * Method for type username.
+     */
+    public void setUsername(String username){
         type(registrationUsernameInput, username);
+    }
+    /**
+     * Method for type email.
+     */
+    public void setEmail(String email){
         type(registrationEmailInput, email);
+    }
+
+    /**
+     * Method for type password.
+     */
+    public void setPassword(String password){
         type(registrationPasswordInput, password);
+    }
+
+    /**
+     * Method for type register info.
+     */
+    public void setRegisterInfo(String username, String email, String password){
+        setUsername(username);
+        setEmail(email);
+        setPassword(password);
         delay();
     }
 
@@ -37,7 +60,6 @@ public class RegisterPage extends BasePage {
         clickElement(registrationUsernameInput); // Without any clicking area, alert is not showing.
     }
 
-    // FIXME REGISTER & LOGIN SAME GET MESSAGE PROCESS
     public String getRegisterMessage(By messageLocator){
         waitUntilItemShowsUp(messageLocator);
         return findElement(messageLocator).getText();
@@ -55,7 +77,4 @@ public class RegisterPage extends BasePage {
     public String getWeakPasswordMessage(){
         return getRegisterMessage(errorWeakPassword);
     }
-
-
-
 }

@@ -2,10 +2,7 @@ package com.shop.demoqa.tests;
 
 import com.shop.demoqa.pages.RegisterPage;
 import com.shop.demoqa.testdata.RegisterTestData;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -67,4 +64,10 @@ public class RegisterTest extends BaseTest {
         registerPage.createAnAccount(RegisterTestData.VALID_USERNAME, RegisterTestData.DUPLICATED_EMAIL, RegisterTestData.STRONG_PASSWORD);
         assertEquals(RegisterTestData.DUPLICATED_EMAIL_MESSAGE, registerPage.getInvalidRegisterMessage());
     }
+
+    @AfterEach
+    public void closeTest(){
+        tearDown();
+    }
+
 }
