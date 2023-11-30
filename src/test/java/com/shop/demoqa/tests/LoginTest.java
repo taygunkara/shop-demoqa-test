@@ -15,6 +15,7 @@ public class LoginTest extends BaseTest {
         setUp();
         navigateToLoginAndRegisterPage();
         loginPage = new LoginPage(driver);
+        loginPage.clearCredentials();
     }
 
     @Test

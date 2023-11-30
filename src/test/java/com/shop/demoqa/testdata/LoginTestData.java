@@ -2,6 +2,8 @@ package com.shop.demoqa.testdata;
 
 public class LoginTestData {
 
+    // FIXME CHANGE VARIABLES --> TEST
+
     // FIXME RENAME VARIABLES
     public static final String VALID_USERNAME = "validusername";
     // public static final String VALID_EMAIL = "validemail@email.com";
