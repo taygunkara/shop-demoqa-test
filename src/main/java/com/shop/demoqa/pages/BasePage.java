@@ -12,6 +12,8 @@ import java.time.Duration;
 /**
  * Represents the base page.
  */
+
+// TODO ADD DOCS
 public class BasePage {
 
     protected WebDriver driver;
@@ -58,5 +60,10 @@ public class BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void clear(By locator){
+        findElement(locator).clear();
     }
 }
