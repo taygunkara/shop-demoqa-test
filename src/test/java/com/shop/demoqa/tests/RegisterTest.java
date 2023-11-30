@@ -14,7 +14,7 @@ public class RegisterTest extends BaseTest {
         setUp();
         navigateToLoginAndRegisterPage();
         registerPage = new RegisterPage(driver);
-
+        registerPage.clearCredentials();
     }
 
     @Test

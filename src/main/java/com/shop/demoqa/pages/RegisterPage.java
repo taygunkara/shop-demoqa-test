@@ -39,6 +39,12 @@ public class RegisterPage extends BasePage {
         type(registrationPasswordInput, password);
     }
 
+    public void clearCredentials() {
+        clear(registrationUsernameInput);
+        clear(registrationEmailInput);
+        clear(registrationPasswordInput);
+    }
+
     /**
      * Method for type register info.
      */
