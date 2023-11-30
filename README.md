@@ -28,8 +28,18 @@
 - Should Not Be Able To Create An Account With Duplicated Email
 - Should Not Be Able To Create An Account With Weak Password
 ---------------------------------------------------------------------
-- Should Not Be Able To Create An Account With Duplicated Username
+- Should Be Able To Create An Account With Duplicated Username 
 - Should Not Be Able To Create An Account With Unsported Characters
+```
+</details>
+
+<details>
+  <summary>Search Tests</summary>
+
+```
+- Should Be Able To Search For Valid Product
+- Should Not Be Able To Search With Empty Value
+- Should Yield Results When Searching With Exact Product Name
 ```
 </details>
 
