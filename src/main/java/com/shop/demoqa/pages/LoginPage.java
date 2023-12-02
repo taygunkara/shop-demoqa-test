@@ -5,42 +5,42 @@ import org.openqa.selenium.WebDriver;
 
 
 /**
- * Represents the login page.
+ * The LoginPage represents the page and actions related to user login on a web application.
+ * It provides methods to interact with the login form and retrieve login-related messages.
  */
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public final By usernameInput = By.xpath("//input[@id='username']");
-    public final By passwordInput = By.xpath("//input[@id='password']");
-    public final By rememberMeInput = By.xpath("//input[@id='rememberme']");
-    public final By loginButton = By.xpath("//button[@name='login']");
-    public final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
-    public final By successMessage = By.xpath("//div[@class='woocommerce-MyAccount-content']//p[strong]");
-
-    // FIXME restore methods back to original state
+    public static final By usernameInput = By.xpath("//input[@id='username']");
+    public static final By passwordInput = By.xpath("//input[@id='password']");
+    public static final By rememberMeInput = By.xpath("//input[@id='rememberme']");
+    public static final By loginButton = By.xpath("//button[@name='login']");
+    public static final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
+    public static final By successMessage = By.xpath("//div[@class='woocommerce-MyAccount-content']//p[strong]");
 
     /**
-     * Method for type username.
+     * Sets the username in the login form.
+     * @param username The username to set.
      */
     public void setUsername(String username){
         type(usernameInput, username);
     }
 
     /**
-     * Method for type password.
+     * Sets the password in the login form.
+     * @param password The password to set.
      */
     public void setPassword(String password){
         type(passwordInput, password);
     }
 
-    public void clearCredentials() {
-        clear(usernameInput);
-        clear(passwordInput);
-
-    }
-
+    /**
+     * Sets the login credentials and performs a login action.
+     * @param username The username to set.
+     * @param password The password to set.
+     */
     public void setLogin(String username, String password){
         setUsername(username);
         setPassword(password);
@@ -49,23 +49,34 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * Method for get message.
+     * Clears the login credentials, including username and password.
      */
-    public String getLoginMessage(By messageLocator){
-        // waitUntilItemShowsUp(messageLocator);
-        return getText(messageLocator);
-        // return findElement(messageLocator).getText();
+    public void clearCredentials() {
+        clear(usernameInput);
+        clear(passwordInput);
+
     }
 
     /**
-     * Method for get error login message.
+     * Gets the login message based on the provided locator.
+     * @param messageLocator The locator for the login message.
+     * @return The login message as a string.
      */
-    public String getInvalidLoginMessage(){
+    public String getLoginMessage(By messageLocator){
+        return getText(messageLocator);
+    }
+
+    /**
+     * Gets the invalid login error message.
+     * @return The invalid login error message as a string.
+     */
+    public String getInvalidLoginErrorMessage(){
         return getLoginMessage(errorMessage);
     }
 
     /**
-     * Method for get success login message.
+     * Gets the success login message.
+     * @return The success login message as a string.
      */
     public String getSuccessLoginMessage(){
         return getLoginMessage(successMessage);
