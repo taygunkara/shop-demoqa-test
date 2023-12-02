@@ -52,8 +52,9 @@ public class LoginPage extends BasePage {
      * Method for get message.
      */
     public String getLoginMessage(By messageLocator){
-        waitUntilItemShowsUp(messageLocator);
-        return findElement(messageLocator).getText();
+        // waitUntilItemShowsUp(messageLocator);
+        return getText(messageLocator);
+        // return findElement(messageLocator).getText();
     }
 
     /**

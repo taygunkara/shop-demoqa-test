@@ -18,7 +18,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify successful registration with valid information.")
+    @DisplayName("Verify Successful Registration With Valid Information.")
     @Order(1)
     public void ShouldBeAbleToCreateAnAccount(){
         registerPage.createAnAccount(RegisterTestData.VALID_USERNAME, RegisterTestData.VALID_EMAIL, RegisterTestData.STRONG_PASSWORD);
@@ -26,7 +26,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify registration failure with empty username.")
+    @DisplayName("Verify Registration Failure With Empty Username.")
     @Order(2)
     public void ShouldNotBeAbleToCreateAnAccountWithEmptyUsername(){
         registerPage.createAnAccount("", RegisterTestData.VALID_EMAIL, RegisterTestData.STRONG_PASSWORD);
@@ -34,7 +34,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify registration failure with empty email.")
+    @DisplayName("Verify Registration Failure With Empty Email.")
     @Order(3)
     public void ShouldNotBeAbleToCreateAnAccountWithEmptyEmail(){
         registerPage.createAnAccount(RegisterTestData.VALID_USERNAME, "", RegisterTestData.STRONG_PASSWORD);
@@ -42,7 +42,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify registration failure with empty password.")
+    @DisplayName("Verify Registration Failure With Empty Password.")
     @Order(4)
     public void ShouldNotBeAbleToCreateAnAccountWithEmptyPassword(){
         registerPage.createAnAccount(RegisterTestData.VALID_USERNAME, RegisterTestData.VALID_EMAIL, "");
@@ -50,7 +50,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify registration failure with weak password.")
+    @DisplayName("Verify Registration Failure With Weak Password.")
     @Order(5)
     public void ShouldNotBeAbleToCreateAnAccountWithWeakPassword() {
         registerPage.setWeakPassword(RegisterTestData.VALID_USERNAME, RegisterTestData.VALID_EMAIL, RegisterTestData.WEAK_PASSWORD);
@@ -58,7 +58,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify registration failure with duplicated email.")
+    @DisplayName("Verify Registration Failure With Duplicated Email.")
     @Order(6)
     public void ShouldNotBeAbleToCreateAnAccountWithDuplicatedEmail(){
         registerPage.createAnAccount(RegisterTestData.VALID_USERNAME, RegisterTestData.DUPLICATED_EMAIL, RegisterTestData.STRONG_PASSWORD);

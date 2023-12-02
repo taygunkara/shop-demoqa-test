@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify successful login with a valid username and password.")
+    @DisplayName("Verify Successful Login With A Valid Username And Password.")
     @Order(1)
     public void ShouldBeAbleToLoginWithValidUsernameAndValidPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.VALID_PASSWORD);
@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify login failure with an empty username.")
+    @DisplayName("Verify Login Failure With An Empty Username.")
     @Order(2)
     public void ShouldNotBeAbleToLoginWithEmptyUsername(){
         loginPage.setLogin("", LoginTestData.VALID_PASSWORD);
@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify login failure with an empty password.")
+    @DisplayName("Verify Login Failure With An Empty Password.")
     @Order(3)
     public void ShouldNotBeAbleToLoginWithEmptyPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, "");
@@ -44,7 +44,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify login failure with a valid username and an invalid password.")
+    @DisplayName("Verify Login Failure With A Valid Username And An Invalid Password.")
     @Order(4)
     public void ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.INVALID_PASSWORD);
@@ -52,7 +52,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify login failure with an invalid username and an valid password.")
+    @DisplayName("Verify Login Failure With An Invalid Username And An Valid Password.")
     @Order(5)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword(){
         loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.VALID_PASSWORD);
@@ -60,7 +60,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify login failure with an invalid username and an invalid password.")
+    @DisplayName("Verify Login Failure With An Invalid Username And An Invalid Password.")
     @Order(6)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword(){
         loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.INVALID_PASSWORD);

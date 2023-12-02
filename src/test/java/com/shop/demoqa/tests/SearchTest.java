@@ -24,7 +24,7 @@ public class SearchTest extends BaseTest{
     }
 
     @Test
-    @DisplayName("Verify successful search for a valid product.")
+    @DisplayName("Verify Successful Search For A Valid Product.")
     @Order(1)
     public void ShouldBeAbleToSearchForValidProduct(){
         homePage.searchProduct("MIDI DRESS");
@@ -32,7 +32,7 @@ public class SearchTest extends BaseTest{
     }
 
     @Test
-    @DisplayName("Verify search failure with empty value.")
+    @DisplayName("Verify Search Failure With Empty Value.")
     @Order(2)
     public void ShouldNotBeAbleToSearchWithEmpty(){
         homePage.searchProduct("");
@@ -40,7 +40,7 @@ public class SearchTest extends BaseTest{
     }
 
     @Test
-    @DisplayName("Verify successful search with exact product name.")
+    @DisplayName("Verify Successful Search With Exact Product Name.")
     @Order(3)
     public void ShouldYieldResultsWhenSearchingWithExactProductName(){
         homePage.searchProduct("MIDI DRESS");

@@ -67,8 +67,9 @@ public class RegisterPage extends BasePage {
     }
 
     public String getRegisterMessage(By messageLocator){
-        waitUntilItemShowsUp(messageLocator);
-        return findElement(messageLocator).getText();
+        // waitUntilItemShowsUp(messageLocator);
+        return getText(messageLocator);
+        // return findElement(messageLocator).getText();
     }
 
     public String getSuccessRegisterMessage(){

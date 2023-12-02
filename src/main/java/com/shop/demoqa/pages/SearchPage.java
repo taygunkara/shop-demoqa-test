@@ -2,7 +2,6 @@ package com.shop.demoqa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 public class SearchPage extends BasePage{
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -10,11 +9,11 @@ public class SearchPage extends BasePage{
     public static final By firstProduct = By.cssSelector("div[class=noo-product-inner]");
 
     public String getProductName(){
-        return findElement(firstProduct).getText();
+        return getText(firstProduct);
     }
 
     // FIXME RENAME
-    public boolean checkContainsProduct(String product){
+    public boolean checkContainsProduct(String product) {
         return getProductName().contains(product);
     }
 }
