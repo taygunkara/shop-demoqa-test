@@ -8,12 +8,12 @@
   <summary>Login Tests</summary>
 
 ```
-- Should Be Able To Login With Valid Username and Valid Password
-- Should Not Be Able To Login With Empty Username
-- Should Not Be Able To Login With Empty Password
-- Should Not Be Able To Login With Valid Username and Invalid Password
-- Should Not Be Able To Login With Invalid Username and Valid Password
-- Should Not Be Able To Login With Invalid Username and Invalid Password
+- Verify Successful Login With A Valid Username And Password.
+- Verify Login Failure With An Empty Username.
+- Verify Login Failure With An Empty Password.
+- Verify Login Failure With A Valid Username And An Invalid Password.
+- Verify Login Failure With An Invalid Username And An Valid Password.
+- Verify Login Failure With An Invalid Username And An Invalid Password.
 ```
 </details>
 
@@ -21,12 +21,12 @@
   <summary>Register Tests</summary>
 
 ```
-- Should Be Able To Create An Account
-- Should Not Be Able To Create An Account With Empty Username
-- Should Not Be Able To Create An Account With Empty Email
-- Should Not Be Able To Create An Account With Empty Password
-- Should Not Be Able To Create An Account With Duplicated Email
-- Should Not Be Able To Create An Account With Weak Password
+- Verify Successful Registration With Valid Information.
+- Verify Registration Failure With Empty Username.
+- Verify Registration Failure With Empty Email.
+- Verify Registration Failure With Empty Password.
+- Verify Registration Failure With Weak Password.
+- Verify Registration Failure With Duplicated Email.
 ---------------------------------------------------------------------
 - Should Be Able To Create An Account With Duplicated Username 
 - Should Not Be Able To Create An Account With Unsported Characters
@@ -37,9 +37,19 @@
   <summary>Search Tests</summary>
 
 ```
-- Should Be Able To Search For Valid Product
-- Should Not Be Able To Search With Empty Value
-- Should Yield Results When Searching With Exact Product Name
+- Verify Successful Search For A Valid Product.
+- Verify Search Failure With Empty Value.
+- Verify Successful Search With Exact Product Name.
+```
+</details>
+
+
+<details>
+  <summary>Product Tests</summary>
+
+```
+- Verify Correct Display of Product Name on Product Page.
+- Add Product to Cart Successfully.
 ```
 </details>
 

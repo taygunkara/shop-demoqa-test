@@ -7,8 +7,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
     public WebDriver driver;
-    public String BASE_URL = "https://shop.demoqa.com/";
-    public String LOGIN_AND_REGISTER_PATH = "my-account/";
+    public static final String BASE_URL = "https://shop.demoqa.com/";
+    public static final String LOGIN_AND_REGISTER_PATH = "my-account/";
+    public static final String PRODUCT_PATH = "product/red-satin-round-neck-backless-maxi-dress/";
+    // PRODUCT= https://shop.demoqa.com/product/red-satin-round-neck-backless-maxi-dress/
 
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
@@ -23,14 +25,15 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
     }
-
     public void navigateToHomePage() {
         driver.get(BASE_URL);
     }
     public void navigateToLoginAndRegisterPage() {
         driver.get(BASE_URL + LOGIN_AND_REGISTER_PATH);
     }
-
+    public void navigateToProductPage(){
+        driver.get(BASE_URL + PRODUCT_PATH);
+    }
     public void tearDown() {
         driver.close();
         driver.quit();
