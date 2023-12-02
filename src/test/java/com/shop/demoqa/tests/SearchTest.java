@@ -2,10 +2,7 @@ package com.shop.demoqa.tests;
 
 import com.shop.demoqa.pages.HomePage;
 import com.shop.demoqa.pages.SearchPage;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -44,6 +41,11 @@ public class SearchTest extends BaseTest{
     @Order(3)
     public void ShouldYieldResultsWhenSearchingWithExactProductName(){
         homePage.searchProduct("MIDI DRESS");
-        assertTrue(searchPage.checkContainsProduct("MIDI DRESS"));
+        assertTrue(searchPage.isProductListContains("MIDI DRESS"));
+    }
+
+    @AfterEach
+    public void closeTest(){
+        tearDown();
     }
 }

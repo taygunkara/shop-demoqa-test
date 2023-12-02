@@ -31,7 +31,7 @@ public class LoginTest extends BaseTest {
     @Order(2)
     public void ShouldNotBeAbleToLoginWithEmptyUsername(){
         loginPage.setLogin("", LoginTestData.VALID_PASSWORD);
-        assertEquals(LoginTestData.MISSING_USERNAME_MESSAGE, loginPage.getInvalidLoginMessage());
+        assertEquals(LoginTestData.MISSING_USERNAME_MESSAGE, loginPage.getInvalidLoginErrorMessage());
     }
 
     @Test
@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
     @Order(3)
     public void ShouldNotBeAbleToLoginWithEmptyPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, "");
-        assertEquals(LoginTestData.MISSING_PASSWORD_MESSAGE, loginPage.getInvalidLoginMessage());
+        assertEquals(LoginTestData.MISSING_PASSWORD_MESSAGE, loginPage.getInvalidLoginErrorMessage());
 
     }
 
@@ -48,7 +48,7 @@ public class LoginTest extends BaseTest {
     @Order(4)
     public void ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword(){
         loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.INVALID_PASSWORD);
-        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginMessage());
+        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginErrorMessage());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class LoginTest extends BaseTest {
     @Order(5)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword(){
         loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.VALID_PASSWORD);
-        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginMessage());
+        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginErrorMessage());
     }
 
     @Test
@@ -64,7 +64,7 @@ public class LoginTest extends BaseTest {
     @Order(6)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword(){
         loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.INVALID_PASSWORD);
-        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginMessage());
+        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginErrorMessage());
     }
 
     @AfterEach

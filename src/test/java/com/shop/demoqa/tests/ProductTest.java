@@ -30,7 +30,7 @@ public class ProductTest extends BaseTest{
     @DisplayName("Add Product to Cart Successfully.")
     public void shouldSuccessfullyAddProductToCart(){
         productPage.productAddToCart(ProductTestData.PRODUCT_COLOR_RED, ProductTestData.PRODUCT_SIZE_LARGE);
-        assertEquals(ProductTestData.PRODUCT_ADDED_SUCCESS_MESSAGE, productPage.getAddedCartMessage());
+        assertEquals(ProductTestData.PRODUCT_ADDED_SUCCESS_MESSAGE, productPage.getCartProductAddedMessage());
     }
 
     @AfterEach
