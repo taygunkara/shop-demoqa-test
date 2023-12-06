@@ -48,10 +48,28 @@
   <summary>Product Tests</summary>
 
 ```
-- Verify Correct Display of Product Name on Product Page.
-- Add Product to Cart Successfully.
+- Verify Correct Display of Product Name on Product Page
+- Add Product to Cart Successfully
+- Verify Unable to Add Product to Cart Without Variants
+- Verify Increasing Product Count
+- Verify Decreasing Product Count
+- Verify Adding Product to Favorites
+- Verify Display of Related Products Section on Product Page
+- Verify Presence of Additional Information Section on Product Page
+- Should Clear All Variants With Clear Button
 ```
 </details>
+
+<details>
+  <summary>Cart Tests</summary>
+
+```
+- 
+
+```
+</details>
+
+
 
 ---
 
@@ -60,5 +78,48 @@
 - [Selenium Chrome Driver](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver)
 - [Selenium Java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
 - [WebDriverManager](https://bonigarcia.dev/webdrivermanager/)
+
+---
+
+<details>
+  <summary>Project Structure</summary>
+
+```
+├── pom.xml
+├── README.md
+└── src
+    ├── main
+    │   └── java
+    │       └── com
+    │           └── shop
+    │               └── demoqa
+    │                   └── pages
+    │                       ├── BasePage.java
+    │                       ├── CartPage.java
+    │                       ├── HomePage.java
+    │                       ├── LoginPage.java
+    │                       ├── ProductPage.java
+    │                       ├── RegisterPage.java
+    │                       ├── SearchPage.java
+    │                       └── WishlistPage.java
+    └── test
+        └── java
+            └── com
+                └── shop
+                    └── demoqa
+                        ├── testdata
+                        │   ├── LoginTestData.java
+                        │   ├── ProductTestData.java
+                        │   └── RegisterTestData.java
+                        └── tests
+                            ├── BaseTest.java
+                            ├── CartTest.java
+                            ├── LoginTest.java
+                            ├── ProductTest.java
+                            ├── RegisterTest.java
+                            ├── SearchTest.java
+                            └── WishlistTest.java
+```
+</details>
 
 
