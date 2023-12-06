@@ -1,11 +1,9 @@
 package com.shop.demoqa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-/**
- * The ProductPage represents the page and actions related to viewing and interacting with a product on a web application.
- */
 public class ProductPage extends BasePage{
     public ProductPage(WebDriver driver) {
         super(driver);
@@ -23,115 +21,84 @@ public class ProductPage extends BasePage{
     public static final By productCountIncreaseButton = By.xpath("//button[@class='qty-increase']");
     public static final By productCountDecreaseButton = By.xpath("//button[@class='qty-decrease']");
     public static final By addToCartButton = By.xpath("//button[@class='single_add_to_cart_button button alt']");
-    public static final By addedCartMessage = By.xpath("//a[@class='button wc-forward']");
+    public static final By addToFavorite = By.xpath("(//a[@data-title='Add to Wishlist'])[1]");
+    public static final By wishlist = By.xpath("//*[@id=\"noo-site\"]/header/div[1]/div/ul[2]/li[1]/a");
+    public static final By dismissBanner = By.xpath("//a[@class='woocommerce-store-notice__dismiss-link']");
+    public static final By relatedProducts = By.xpath("//div[@class='products noo-row']");
+    public static final By additionalInformationArea = By.xpath("//*[@id=\"product-1184\"]/div[2]/div/ul/li[1]"); // FIXME
+    public static final By clearVariation = By.xpath("//a[@class='reset_variations'][contains(@style, 'visibility: visible;')]");
+    public static final By cartPage = By.xpath("//a[@class='cart-button']");
 
-    /**
-     * Gets the name of the product.
-     * @return The product name as a string.
-     */
+
+    public void setDismissBanner(){
+        if (isDisplayed(dismissBanner)){
+            scrollUp();
+            clickElement(dismissBanner);
+        }
+    }
+
     public String getProductName(){
         return getText(productName);
     }
 
-    /**
-     * Gets the message displayed after adding a product to the cart.
-     * @return The product added to cart message as a string.
-     */
-    public String getCartProductAddedMessage(){
-        return getText(addedCartMessage);
-    }
-
-    /**
-     * Clicks the "Add to Cart" button on the product details page.
-     */
     public void clickAddToCartButton(){
         delay();
         clickElement(addToCartButton);
     }
 
-    /**
-     * Sets the color of the product.
-     * @param locator The locator for the color selection.
-     */
+    public void clickEnter(){
+        clickEnter(productCountInput);
+    }
+
     public void setColor(By locator){
         scrollDown();
         clickElement(colorSelection);
         clickElement(locator);
     }
 
-    /**
-     * Sets the color of the product to red.
-     */
     public void setRedColor(){
         setColor(redColor);
     }
 
-    /**
-     * Sets the color of the product to mauve.
-     */
     public void setMauveColor(){
         setColor(mauveColor);
     }
 
-    /**
-     * Sets the size of the product.
-     * @param locator The locator for the size selection.
-     */
     public void setSize(By locator){
         clickElement(sizeSelection);
         clickElement(locator);
     }
 
-    /**
-     * Sets the size of the product to large.
-     */
     public void setLargeSize(){
         setSize(largeSize);
     }
 
-    /**
-     * Sets the size of the product to medium.
-     */
     public void setMediumSize(){
         setSize(mediumSize);
     }
 
-    /**
-     * Sets the size of the product to small.
-     */
     public void setSmallSize(){
         setSize(smallSize);
     }
 
-    /**
-     * Increases the product count on the product details page.
-     */
-    public void increaseProductCount(){
-        clickElement(productCountIncreaseButton);
+    public void decreaseProductCount(int decreaseAmount) {
+        for (int i = 0; i < decreaseAmount; i++) {
+            clickElement(productCountDecreaseButton);
+        }
     }
 
-    /**
-     * Decreases the product count on the product details page.
-     */
-    public void decreaseProductCount(){
-        clickElement(productCountDecreaseButton);
+    public void increaseProductCount(int increaseAmount) {
+        for (int i = 0; i < increaseAmount; i++) {
+            clickElement(productCountIncreaseButton);
+        }
     }
 
-    /**
-     * Sets the product count on the product details page.
-     * @param count The count to set for the product.
-     */
     public void setProductCount(String count){
         clear(productCountInput);
         type(productCountInput, count);
     }
 
-    /**
-     * Adds the product to the cart with specified color and size.
-     * @param color The color of the product.
-     * @param size The size of the product.
-     */
-    public void productAddToCart(String color, String size){
+    public void setRequiredInformation(String color, String size, String count){
         switch (color) {
             case "red":
                 setRedColor();
@@ -140,7 +107,6 @@ public class ProductPage extends BasePage{
                 setMauveColor();
                 break;
         }
-
         switch (size) {
             case "large":
                 setLargeSize();
@@ -152,24 +118,57 @@ public class ProductPage extends BasePage{
                 setSmallSize();
                 break;
         }
+        setProductCount(count);
+    }
+
+    public void productAddToCart(String color, String size, String count){
+        setRequiredInformation(color, size, count);
         clickAddToCartButton();
     }
 
-    /**
-     * Changes the product count on the product details page based on the specified operation.
-     * @param operation The operation to perform on the product count (increase, decrease, or set a specific count).
-     */
-    public void changeProductCount(String operation){
-        switch (operation) {
-            case "increase":
-                increaseProductCount();
-                break;
-            case "decrease":
-                decreaseProductCount();
-                break;
-            default:
-                setProductCount(operation);
-                break;
+    public String getAlert(){
+        return getAlertMessage();
+    }
+
+    public void addToFavorite() {
+        clickElement(addToFavorite);
+    }
+
+    public void goToWishlist(){
+        scrollUp();
+        clickElement(wishlist);
+    }
+
+    public boolean isRelatedProductsSectionVisible(){
+        try{
+            return isDisplayed(relatedProducts);
+        } catch (NoSuchElementException e){
+            return false;
         }
     }
+
+    public boolean isAdditionalInformationSectionPresent(){
+        try{
+            return isDisplayed(additionalInformationArea);
+        } catch (NoSuchElementException e){
+            return false;
+        }
+    }
+
+    public void clearAllVariants(){
+        clickElement(clearVariation);
+    }
+
+    public boolean isVariantClearButtonActive(){
+        try{
+            return isDisplayed(clearVariation);
+        } catch (NoSuchElementException e){
+            return false;
+        }
+    }
+
+    public void goToCart() {
+        clickElement(cartPage);
+    }
+
 }

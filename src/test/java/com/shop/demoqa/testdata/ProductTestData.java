@@ -16,5 +16,6 @@ public class ProductTestData {
     public static final String TYPE_PRODUCT_COUNT = "5";
     public static final String EMPTY_PRODUCT_COUNT = "0";
     // -------------------------------------------------------------------
-    public static final String PRODUCT_ADDED_SUCCESS_MESSAGE = "View cart";
+    public static final String PRODUCT_NAME_ADDED_TO_CART = "RED SATIN ROUND NECK BACKLESS MAXI DRESS - RED";
+    public static final String ALERT_MESSAGE = "Please select some product options before adding this product to your cart.";
 }

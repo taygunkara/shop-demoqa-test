@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 
 /**
@@ -108,14 +109,34 @@ public class BasePage {
         js.executeScript("window.scrollBy(0,600)");
     }
 
+    public void scrollUp(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,0)");
+    }
+
     /**
      * Static method to introduce a delay of 1 second.
      */
     static void delay() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+    public String getAlertMessage(){
+        Alert alert = driver.switchTo().alert();
+        return alert.getText();
+    }
+
+    public void dismissAlert(){
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+    }
+
+    public String getAttribute(By locator, String attribute){
+        return findElement(locator).getAttribute(attribute);
+    }
+
 }
