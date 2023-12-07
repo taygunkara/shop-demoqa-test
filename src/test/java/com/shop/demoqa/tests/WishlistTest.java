@@ -39,8 +39,24 @@ public class WishlistTest extends BaseTest{
         assertEquals("Product successfully removed.", wishlistPage.productRemovedMessage());
     }
 
+    // FIXME ASSERT --> CHECK CART PAGE
+    // BUG -- CAN'T ADD // OR THIS IS A FEATURE
+    // WE DON'T HAVE REQUIREMENT DOCS FOR THIS WEBSITE
+    @Test
+    @DisplayName("Successfully Add Product To Cart Page")
+    @Order(3)
+    public void ShouldBeAddProductToCartPageFromWishlist(){
+        navigateToProductPage();
+        productPage.productAddToWishlist("red", "large", "1");
+        productPage.goToWishlist();
+        wishlistPage.addProductToCart();
+        wishlistPage.goToCart();
+        assertEquals("https://shop.demoqa.com/shop/", driver.getCurrentUrl());
+    }
+
     @AfterEach
     public void closeTest(){
         tearDown();
     }
+
 }
