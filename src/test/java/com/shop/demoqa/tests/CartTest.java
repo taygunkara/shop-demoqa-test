@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+// FIXME ALL TESTS -- METHODS
 public class CartTest extends BaseTest{
 
     private CartPage cartPage;
@@ -23,64 +24,55 @@ public class CartTest extends BaseTest{
         productPage.goToCart();
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName("Should Be In Cart Page")
+    @DisplayName("Verify Current Page is Cart Page")
     @Order(1)
-    public void isOnCartPage(){
+    public void ShouldVerifyCurrentPageIsCartPage(){
         assertTrue(cartPage.isOnCartPage());
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName(" clear cart page")
+    @DisplayName("Clear Cart - Verify Empty Message")
     @Order(2)
-    public void isCartPageEmpty(){
+    public void ShouldClearCartAndVerifyEmptyMessage(){
         cartPage.clearShoppingCart();
         assertEquals("Your cart is currently empty.", cartPage.getEmptyMessage());
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName(" adasd")
+    @DisplayName("Update Cart - Verify Success Message")
     @Order(3)
-    public void CartShouldBeUpdate(){
+    public void ShouldUpdateCartAndVerifySuccessMessage(){
         cartPage.updateProduct();
         assertEquals("Cart updated.", cartPage.getUpdateMessage());
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName(" continue ")
+    @DisplayName("Continue Shopping - Verify Redirect")
     @Order(4)
-    public void ShouldContinueToShopping(){
+    public void ShouldContinueToShoppingAndVerifyRedirect(){
         cartPage.continueShopping();
-        System.out.println(driver.getCurrentUrl());
         assertEquals("https://shop.demoqa.com/shop/", driver.getCurrentUrl());
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName(" apply coupon with error")
+    @DisplayName("Apply Invalid Coupon - Verify No Discount")
     @Order(5)
-    public void ShouldNotBeDiscountWithInvalidCoupon(){
-        cartPage.applyCoupon("1121232");
+    public void ShouldNotApplyDiscountWithInvalidCoupon(){
+        cartPage.applyCoupon("1111111");
         assertTrue(cartPage.isGetCouponError());
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName(" proceed to checkout ")
+    @DisplayName("Proceed to Checkout - Verify Redirect")
     @Order(6)
-    public void ShouldProceedToCheckout(){
+    public void ShouldProceedToCheckoutAndVerifyRedirect(){
         cartPage.goToCheckout();
-        System.out.println(driver.getCurrentUrl());
         assertEquals("https://shop.demoqa.com/checkout/", driver.getCurrentUrl());
     }
 
-    // FIXME RENAME
     @Test
-    @DisplayName(" remove product ")
+    @DisplayName("Successfully Remove Product from Cart")
     @Order(7)
     public void ShouldRemoveProductFromCart(){
         cartPage.removeProduct();

@@ -64,12 +64,25 @@
   <summary>Cart Tests</summary>
 
 ```
-- 
-
+- Verify Current Page is Cart Page
+- Clear Cart - Verify Empty Message
+- Update Cart - Verify Success Message
+- Continue Shopping - Verify Redirect
+- Apply Invalid Coupon - Verify No Discount
+- Proceed to Checkout - Verify Redirect
+- Successfully Remove Product from Cart
 ```
 </details>
 
+<details>
+  <summary>Wishlist Tests</summary>
 
+```
+- Should Be on Wishlist Page
+- Successfully Clear All Products on Wishlist
+- Successfully Add Product To Cart Page [BUG]
+```
+</details>
 
 ---
 
