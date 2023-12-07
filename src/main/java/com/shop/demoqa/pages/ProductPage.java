@@ -21,7 +21,7 @@ public class ProductPage extends BasePage{
     public static final By productCountIncreaseButton = By.xpath("//button[@class='qty-increase']");
     public static final By productCountDecreaseButton = By.xpath("//button[@class='qty-decrease']");
     public static final By addToCartButton = By.xpath("//button[@class='single_add_to_cart_button button alt']");
-    public static final By addToFavorite = By.xpath("(//a[@data-title='Add to Wishlist'])[1]");
+    public static final By addToFavorite = By.xpath("(//a[@class='add_to_wishlist single_add_to_wishlist'])[1]");
     public static final By wishlist = By.xpath("//*[@id=\"noo-site\"]/header/div[1]/div/ul[2]/li[1]/a");
     public static final By dismissBanner = By.xpath("//a[@class='woocommerce-store-notice__dismiss-link']");
     public static final By relatedProducts = By.xpath("//div[@class='products noo-row']");
@@ -30,6 +30,7 @@ public class ProductPage extends BasePage{
     public static final By cartPage = By.xpath("//a[@class='cart-button']");
 
 
+    // FIXME try-catch ?
     public void setDismissBanner(){
         if (isDisplayed(dismissBanner)){
             scrollUp();
@@ -126,15 +127,23 @@ public class ProductPage extends BasePage{
         clickAddToCartButton();
     }
 
+    public void productAddToWishlist(String color, String size, String count){
+        setRequiredInformation(color, size, count);
+        clickAddToWishlist();
+    }
+
     public String getAlert(){
         return getAlertMessage();
     }
 
-    public void addToFavorite() {
+    public void clickAddToWishlist() {
+        delay();
         clickElement(addToFavorite);
+        delay();
     }
 
     public void goToWishlist(){
+        setDismissBanner();
         scrollUp();
         clickElement(wishlist);
     }

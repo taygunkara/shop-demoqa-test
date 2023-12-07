@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -32,6 +32,10 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
+    public List<WebElement> findAllElements(By locator){
+        return driver.findElements(locator);
+    }
+
     /**
      * Clicks on a web element identified by the provided locator after waiting for it to be clickable.
      *
@@ -41,6 +45,12 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(findElement(locator)));
         findElement(locator).click();
+    }
+
+    public static void clickAllElements(List<WebElement> elements) {
+        for (WebElement element : elements) {
+            element.click();
+        }
     }
 
     /**
@@ -98,6 +108,7 @@ public class BasePage {
      * @return The visible text of the web element.
      */
     public String getText(By locator){
+        waitUntilItemShowsUp(locator);
         return findElement(locator).getText();
     }
 

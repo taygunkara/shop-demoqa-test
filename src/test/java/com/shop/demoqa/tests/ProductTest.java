@@ -75,8 +75,7 @@ public class ProductTest extends BaseTest{
     @DisplayName("Verify Adding Product to Favorites")
     @Order(6)
     public void ShouldAddProductToFavorites(){
-        productPage.setRequiredInformation("red", "large", "1");
-        productPage.addToFavorite();
+        productPage.productAddToWishlist("red", "large", "1");
         productPage.goToWishlist();
         assertEquals("RED SATIN ROUND NECK BACKLESS MAXI DRESS", wishlistPage.getProductName());
     }
