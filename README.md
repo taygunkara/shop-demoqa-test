@@ -120,10 +120,6 @@
             └── com
                 └── shop
                     └── demoqa
-                        ├── testdata
-                        │   ├── LoginTestData.java
-                        │   ├── ProductTestData.java
-                        │   └── RegisterTestData.java
                         └── tests
                             ├── BaseTest.java
                             ├── CartTest.java
