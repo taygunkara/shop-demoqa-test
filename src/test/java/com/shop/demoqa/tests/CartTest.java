@@ -7,21 +7,25 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// FIXME ALL TESTS -- METHODS
+// TODO METHOD IN TEST CLASS ?
+/*
+    navigate to login
+    add product to cart and go to cart page
+ */
+
 public class CartTest extends BaseTest{
 
     private CartPage cartPage;
     private ProductPage productPage;
 
-    // FIXME Cart should not be empty. So in the beginning we need to add product to cart. ?
     @BeforeEach
     public void startTest(){
         setUp();
-        navigateToProductPage();
+        navigateToCartPage();
         cartPage = new CartPage(driver);
         productPage = new ProductPage(driver);
-        productPage.productAddToCart("red", "large", "5");
-        productPage.goToCart();
+        cartPage.setDismissBanner();
+        cartPage.clearShoppingCart(); // We Should Clear Cart Before Proceeding
     }
 
     @Test
@@ -35,6 +39,8 @@ public class CartTest extends BaseTest{
     @DisplayName("Clear Cart - Verify Empty Message")
     @Order(2)
     public void ShouldClearCartAndVerifyEmptyMessage(){
+        navigateToProductPage();
+        productPage.addProductToCartAndGoToCartPage("red", "large", "1");
         cartPage.clearShoppingCart();
         assertEquals("Your cart is currently empty.", cartPage.getEmptyMessage());
     }
@@ -43,6 +49,8 @@ public class CartTest extends BaseTest{
     @DisplayName("Update Cart - Verify Success Message")
     @Order(3)
     public void ShouldUpdateCartAndVerifySuccessMessage(){
+        navigateToProductPage();
+        productPage.addProductToCartAndGoToCartPage("red", "large", "1");
         cartPage.updateProduct();
         assertEquals("Cart updated.", cartPage.getUpdateMessage());
     }
@@ -51,6 +59,8 @@ public class CartTest extends BaseTest{
     @DisplayName("Continue Shopping - Verify Redirect")
     @Order(4)
     public void ShouldContinueToShoppingAndVerifyRedirect(){
+        navigateToProductPage();
+        productPage.addProductToCartAndGoToCartPage("red", "large", "1");
         cartPage.continueShopping();
         assertEquals("https://shop.demoqa.com/shop/", driver.getCurrentUrl());
     }
@@ -59,6 +69,8 @@ public class CartTest extends BaseTest{
     @DisplayName("Apply Invalid Coupon - Verify No Discount")
     @Order(5)
     public void ShouldNotApplyDiscountWithInvalidCoupon(){
+        navigateToProductPage();
+        productPage.addProductToCartAndGoToCartPage("red", "large", "1");
         cartPage.applyCoupon("1111111");
         assertTrue(cartPage.isGetCouponError());
     }
@@ -67,6 +79,8 @@ public class CartTest extends BaseTest{
     @DisplayName("Proceed to Checkout - Verify Redirect")
     @Order(6)
     public void ShouldProceedToCheckoutAndVerifyRedirect(){
+        navigateToProductPage();
+        productPage.addProductToCartAndGoToCartPage("red", "large", "1");
         cartPage.goToCheckout();
         assertEquals("https://shop.demoqa.com/checkout/", driver.getCurrentUrl());
     }
@@ -75,6 +89,8 @@ public class CartTest extends BaseTest{
     @DisplayName("Successfully Remove Product from Cart")
     @Order(7)
     public void ShouldRemoveProductFromCart(){
+        navigateToProductPage();
+        productPage.addProductToCartAndGoToCartPage("red", "large", "1");
         cartPage.removeProduct();
         assertTrue(cartPage.isProductRemoved());
     }

@@ -11,13 +11,13 @@ public class SearchTest extends BaseTest{
     private HomePage homePage;
     private SearchPage searchPage;
 
-    // FIXME RENAME TEST
     @BeforeEach
     public void startTest(){
         setUp();
         navigateToHomePage();
         homePage = new HomePage(driver);
         searchPage = new SearchPage(driver);
+        searchPage.setDismissBanner();
     }
 
     @Test
@@ -28,6 +28,7 @@ public class SearchTest extends BaseTest{
         assertTrue(homePage.isProductsAreaVisible());
     }
 
+    // [BUG] IT SHOULD RETURN TRUE, BECAUSE THE RESULTS CAN NOT COME WITH EMPTY VALUE
     @Test
     @DisplayName("Verify Search Failure With Empty Value.")
     @Order(2)

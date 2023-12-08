@@ -15,7 +15,8 @@ public class LoginTest extends BaseTest {
         setUp();
         navigateToLoginAndRegisterPage();
         loginPage = new LoginPage(driver);
-        loginPage.clearCredentials();
+        loginPage.setDismissBanner();
+        loginPage.clearCredentials(); // We Should Clear Credentials Before Proceeding
     }
 
     @Test

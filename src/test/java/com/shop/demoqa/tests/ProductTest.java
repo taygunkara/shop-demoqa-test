@@ -34,8 +34,7 @@ public class ProductTest extends BaseTest{
     @DisplayName("Add Product to Cart Successfully.")
     @Order(2)
     public void ShouldSuccessfullyAddProductToCart(){
-        productPage.productAddToCart(ProductTestData.PRODUCT_COLOR_RED, ProductTestData.PRODUCT_SIZE_LARGE, ProductTestData.TYPE_PRODUCT_COUNT);
-        productPage.goToCart();
+        productPage.addProductToCartAndGoToCartPage(ProductTestData.PRODUCT_COLOR_RED, ProductTestData.PRODUCT_SIZE_LARGE, ProductTestData.TYPE_PRODUCT_COUNT);
         assertEquals(ProductTestData.PRODUCT_NAME_ADDED_TO_CART, cartPage.getProductName());
     }
 
@@ -56,7 +55,7 @@ public class ProductTest extends BaseTest{
         productPage.setRequiredInformation("red", "large", "0");
         productPage.increaseProductCount(5);
         productPage.clickAddToCartButton();
-        productPage.goToCart();
+        productPage.goToCartPage();
         assertEquals("5", cartPage.getProductCount());
     }
 
@@ -67,7 +66,7 @@ public class ProductTest extends BaseTest{
         productPage.setRequiredInformation("red", "large", "10");
         productPage.decreaseProductCount(5);
         productPage.clickAddToCartButton();
-        productPage.goToCart();
+        productPage.goToCartPage();
         assertEquals("5", cartPage.getProductCount());
     }
 
@@ -75,8 +74,7 @@ public class ProductTest extends BaseTest{
     @DisplayName("Verify Adding Product to Favorites")
     @Order(6)
     public void ShouldAddProductToFavorites(){
-        productPage.productAddToWishlist("red", "large", "1");
-        productPage.goToWishlist();
+        productPage.productAddToWishlistAndGoToWishlist("red", "large", "1");
         assertEquals("RED SATIN ROUND NECK BACKLESS MAXI DRESS", wishlistPage.getProductName());
     }
 

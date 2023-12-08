@@ -1,5 +1,6 @@
 package com.shop.demoqa.tests;
 
+import com.shop.demoqa.pages.CartPage;
 import com.shop.demoqa.pages.ProductPage;
 import com.shop.demoqa.pages.WishlistPage;
 import org.junit.jupiter.api.*;
@@ -11,6 +12,7 @@ public class WishlistTest extends BaseTest{
 
     private WishlistPage wishlistPage;
     private ProductPage productPage;
+    private CartPage cartPage;
 
     @BeforeEach
     public void startTest(){
@@ -18,6 +20,8 @@ public class WishlistTest extends BaseTest{
         navigateToWishlistPage();
         wishlistPage = new WishlistPage(driver);
         productPage = new ProductPage(driver);
+        cartPage = new CartPage(driver);
+        wishlistPage.setDismissBanner();
         wishlistPage.clearAllProducts();
     }
 
@@ -39,8 +43,7 @@ public class WishlistTest extends BaseTest{
         assertEquals("Product successfully removed.", wishlistPage.productRemovedMessage());
     }
 
-    // FIXME ASSERT --> CHECK CART PAGE
-    // BUG -- CAN'T ADD // OR THIS IS A FEATURE
+    // [BUG] CAN NOT ADD PRODUCT TO CART FROM WISHLIST // OR THIS IS A FEATURE
     // WE DON'T HAVE REQUIREMENT DOCS FOR THIS WEBSITE
     @Test
     @DisplayName("Successfully Add Product To Cart Page")
@@ -51,7 +54,7 @@ public class WishlistTest extends BaseTest{
         productPage.goToWishlist();
         wishlistPage.addProductToCart();
         wishlistPage.goToCart();
-        assertEquals("https://shop.demoqa.com/shop/", driver.getCurrentUrl());
+        assertTrue(cartPage.isThereAnyProductOnCart());
     }
 
     @AfterEach

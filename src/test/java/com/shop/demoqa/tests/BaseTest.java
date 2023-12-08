@@ -10,8 +10,9 @@ public class BaseTest {
     public static final String BASE_URL = "https://shop.demoqa.com/";
     public static final String LOGIN_AND_REGISTER_PATH = "my-account/";
     public static final String PRODUCT_PATH = "product/red-satin-round-neck-backless-maxi-dress/";
-    public static final String WISHLIST_PATH = "wishlist/";
     // PRODUCT= https://shop.demoqa.com/product/red-satin-round-neck-backless-maxi-dress/
+    public static final String WISHLIST_PATH = "wishlist/";
+    public static final String CART_PATH = "cart/";
 
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
@@ -37,6 +38,9 @@ public class BaseTest {
     }
     public void navigateToWishlistPage(){
         driver.get(BASE_URL + WISHLIST_PATH);
+    }
+    public void navigateToCartPage(){
+        driver.get(BASE_URL + CART_PATH);
     }
     public void tearDown() {
         driver.close();
