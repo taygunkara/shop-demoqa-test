@@ -25,12 +25,11 @@ public class ProductPage extends BasePage{
     public static final By wishlist = By.xpath("//*[@id=\"noo-site\"]/header/div[1]/div/ul[2]/li[1]/a");
     public static final By dismissBanner = By.xpath("//a[@class='woocommerce-store-notice__dismiss-link']");
     public static final By relatedProducts = By.xpath("//div[@class='products noo-row']");
-    public static final By additionalInformationArea = By.xpath("//*[@id=\"product-1184\"]/div[2]/div/ul/li[1]"); // FIXME
+    public static final By additionalInformationArea = By.xpath("//*[@id=\"product-1184\"]/div[2]/div/ul/li[1]");
     public static final By clearVariation = By.xpath("//a[@class='reset_variations'][contains(@style, 'visibility: visible;')]");
     public static final By cartPage = By.xpath("//a[@class='cart-button']");
 
 
-    // FIXME try-catch ?
     public void setDismissBanner(){
         if (isDisplayed(dismissBanner)){
             scrollUp();
@@ -148,6 +147,11 @@ public class ProductPage extends BasePage{
         clickElement(wishlist);
     }
 
+    public void productAddToWishlistAndGoToWishlist(String color, String size, String count){
+        productAddToWishlist(color, size, count);
+        goToWishlist();
+    }
+
     public boolean isRelatedProductsSectionVisible(){
         try{
             return isDisplayed(relatedProducts);
@@ -176,8 +180,13 @@ public class ProductPage extends BasePage{
         }
     }
 
-    public void goToCart() {
+    public void goToCartPage() {
         clickElement(cartPage);
+    }
+
+    public void addProductToCartAndGoToCartPage(String color, String size, String count){
+        productAddToCart(color, size, count);
+        goToCartPage();
     }
 
 }

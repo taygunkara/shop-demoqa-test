@@ -15,10 +15,9 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
-    // FIXME LOCATORS
-    public static final By searchBox = By.xpath("//*[@id=\"noo-site\"]/header/div[2]/div/a");
-    public static final By searchInput = By.xpath("//*[@id=\"noo-site\"]/header/div[3]/div[2]/form/input[1]");
-    public static final By productsArea = By.xpath("//*[@id=\"noo-site\"]/div[2]/div[2]/div/div");
+    public static final By searchBox = By.xpath("//a[@class='noo-search']");
+    public static final By searchInput = By.xpath("//input[@class='form-control']");
+    public static final By productsArea = By.xpath("//div[@class='products noo-row']");
 
     /**
      * Clears the user credentials, including search box.

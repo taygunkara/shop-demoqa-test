@@ -75,7 +75,7 @@ public class RegisterPage extends BasePage {
      */
     public void createAnAccount(String username, String email, String password){
         setRegisterInfo(username, email, password);
-        clickElement(registrationUsernameInput); // FIXME Without any clicking area, register button is not active.
+        clickElement(registrationUsernameInput);
         delay();
         clickElement(registerButton);
     }
@@ -88,7 +88,7 @@ public class RegisterPage extends BasePage {
      */
     public void setWeakPassword(String username, String email, String weakPassword) {
         setRegisterInfo(username, email, weakPassword);
-        clickElement(registrationUsernameInput); // FIXME Without any clicking area, alert is not showing.
+        clickElement(registrationUsernameInput); // Without any clicking area, alert is not showing.
     }
 
     /**

@@ -19,6 +19,7 @@ public class LoginPage extends BasePage {
     public static final By loginButton = By.xpath("//button[@name='login']");
     public static final By errorMessage = By.xpath("//ul[@class='woocommerce-error']");
     public static final By successMessage = By.xpath("//div[@class='woocommerce-MyAccount-content']//p[strong]");
+    public static final By dismissBanner = By.xpath("//a[@class='woocommerce-store-notice__dismiss-link']");
 
     /**
      * Sets the username in the login form.
@@ -80,5 +81,12 @@ public class LoginPage extends BasePage {
      */
     public String getSuccessLoginMessage(){
         return getLoginMessage(successMessage);
+    }
+
+    public void setDismissBanner(){
+        if (isDisplayed(dismissBanner)){
+            scrollUp();
+            clickElement(dismissBanner);
+        }
     }
 }

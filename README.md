@@ -38,7 +38,7 @@
 
 ```
 - Verify Successful Search For A Valid Product.
-- Verify Search Failure With Empty Value.
+- Verify Search Failure With Empty Value. [BUG]
 - Verify Successful Search With Exact Product Name.
 ```
 </details>

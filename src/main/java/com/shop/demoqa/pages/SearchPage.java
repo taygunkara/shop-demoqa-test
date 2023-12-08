@@ -14,6 +14,8 @@ public class SearchPage extends BasePage{
         super(driver);
     }
     public static final By firstProduct = By.cssSelector("div[class=noo-product-inner]");
+    public static final By dismissBanner = By.xpath("//a[@class='woocommerce-store-notice__dismiss-link']");
+
 
     /**
      * Retrieves the name of the first product in the list.
@@ -32,5 +34,12 @@ public class SearchPage extends BasePage{
      */
     public boolean isProductListContains(String product) {
         return getProductName().contains(product);
+    }
+
+    public void setDismissBanner(){
+        if (isDisplayed(dismissBanner)){
+            scrollUp();
+            clickElement(dismissBanner);
+        }
     }
 }
