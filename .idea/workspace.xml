@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c897b3-e0d0-42c1-8590-ec8ce92856b6" name="Changes" comment="Added RegisterPage.java, RegisterTest.java files.">
+    <list default="true" id="65c897b3-e0d0-42c1-8590-ec8ce92856b6" name="Changes" comment="Update: RegisterTestData.java was removed.&#10;- Register constants are in RegisterTest">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/demoqa/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/testdata/LoginTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/testdata/LoginTestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shop/demoqa/tests/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="c1b08a6f-99a5-41ed-b45f-b63aa4044db4" />
+    <option name="defaultAccountId" value="8382fe76-4516-496b-91dd-53bc523ecfd1" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,27 +46,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/taygun/Downloads/defacto_ui_test",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/taygun/Downloads/defacto_ui_test&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.shop.demoqa.tests" />
       <recent name="com.shop.demoqa.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTest.ShouldNotBeAbleToLoginWithEmptyPassword">
-    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithEmptyPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginTest.ShouldBeAbleToLoginWithValidUsernameAndValidPassword">
+    <configuration name="LoginTest.ShouldBeAbleToLoginWithValidUsernameAndValidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -79,13 +76,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
       <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
-      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithEmptyPassword" />
+      <option name="METHOD_NAME" value="ShouldBeAbleToLoginWithValidUsernameAndValidPassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithEmptyUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTest.ShouldBeAbleToSearchForValidProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -94,14 +91,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
-      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithEmptyUsername" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.SearchTest" />
+      <option name="METHOD_NAME" value="ShouldBeAbleToSearchForValidProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WishlistTest.ShouldBeAddProductToCartPageFromWishlist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -110,14 +107,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
-      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.WishlistTest" />
+      <option name="METHOD_NAME" value="ShouldBeAddProductToCartPageFromWishlist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WishlistTest.ShouldBeOnWishlistPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -126,14 +123,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
-      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.WishlistTest" />
+      <option name="METHOD_NAME" value="ShouldBeOnWishlistPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WishlistTest.ShouldClearAllProductsOnWishlist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop-demoqa-test" />
       <extension name="coverage">
         <pattern>
@@ -142,8 +139,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.shop.demoqa.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.LoginTest" />
-      <option name="METHOD_NAME" value="ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" />
+      <option name="MAIN_CLASS_NAME" value="com.shop.demoqa.tests.WishlistTest" />
+      <option name="METHOD_NAME" value="ShouldClearAllProductsOnWishlist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithEmptyPassword" />
-        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword" />
-        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword" />
-        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword" />
-        <item itemvalue="JUnit.LoginTest.ShouldNotBeAbleToLoginWithEmptyUsername" />
+        <item itemvalue="JUnit.LoginTest.ShouldBeAbleToLoginWithValidUsernameAndValidPassword" />
+        <item itemvalue="JUnit.SearchTest.ShouldBeAbleToSearchForValidProduct" />
+        <item itemvalue="JUnit.WishlistTest.ShouldBeAddProductToCartPageFromWishlist" />
+        <item itemvalue="JUnit.WishlistTest.ShouldClearAllProductsOnWishlist" />
+        <item itemvalue="JUnit.WishlistTest.ShouldBeOnWishlistPage" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +229,87 @@
       <option name="project" value="LOCAL" />
       <updated>1701106115749</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update: CartPage and CartTest">
+      <option name="closed" value="true" />
+      <created>1701963574117</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701963574117</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update: BasePage, ProductPage and ProductTest&#10;- methods were updated&#10;- new methods were added">
+      <option name="closed" value="true" />
+      <created>1701965667232</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701965667232</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update: WishlistPage and WishlistTest&#10;- new tests were added&#10;- new methods and locators were added">
+      <option name="closed" value="true" />
+      <created>1701965725526</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701965725526</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update: WishlistPage and WishlistTest">
+      <option name="closed" value="true" />
+      <created>1701969682570</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701969682570</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update: CartTest and README.md&#10;- Renamed Test&#10;- Updated README.md">
+      <option name="closed" value="true" />
+      <created>1701970203211</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701970203211</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update: Updated and created new methods in Pages">
+      <option name="closed" value="true" />
+      <created>1702044737120</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702044737120</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update: Fixed tests assertions">
+      <option name="closed" value="true" />
+      <created>1702044808685</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702044808685</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update: Removed unused locators and methods">
+      <option name="closed" value="true" />
+      <created>1702044873588</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702044873588</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update: LoginTestData.java was removed.&#10;- Login constants are in LoginTest">
+      <option name="closed" value="true" />
+      <created>1702045274973</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1702045274973</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update: RegisterTestData.java was removed.&#10;- Register constants are in RegisterTest">
+      <option name="closed" value="true" />
+      <created>1702046490304</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702046490304</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -243,7 +320,17 @@
     <MESSAGE value="Minor updates" />
     <MESSAGE value="Added new login tests and structure renewed.&#10;- LoginTests.java, LoginPage.java was updated, LoginTestData.java added.&#10;- Project structure was updated for better organization." />
     <MESSAGE value="Added RegisterPage.java, RegisterTest.java files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added RegisterPage.java, RegisterTest.java files." />
+    <MESSAGE value="Update: CartPage and CartTest" />
+    <MESSAGE value="Update: BasePage, ProductPage and ProductTest&#10;- methods were updated&#10;- new methods were added" />
+    <MESSAGE value="Update: WishlistPage and WishlistTest&#10;- new tests were added&#10;- new methods and locators were added" />
+    <MESSAGE value="Update: WishlistPage and WishlistTest" />
+    <MESSAGE value="Update: CartTest and README.md&#10;- Renamed Test&#10;- Updated README.md" />
+    <MESSAGE value="Update: Updated and created new methods in Pages" />
+    <MESSAGE value="Update: Fixed tests assertions" />
+    <MESSAGE value="Update: Removed unused locators and methods" />
+    <MESSAGE value="Update: LoginTestData.java was removed.&#10;- Login constants are in LoginTest" />
+    <MESSAGE value="Update: RegisterTestData.java was removed.&#10;- Register constants are in RegisterTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: RegisterTestData.java was removed.&#10;- Register constants are in RegisterTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

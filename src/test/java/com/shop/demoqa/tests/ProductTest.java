@@ -3,7 +3,6 @@ package com.shop.demoqa.tests;
 import com.shop.demoqa.pages.CartPage;
 import com.shop.demoqa.pages.ProductPage;
 import com.shop.demoqa.pages.WishlistPage;
-import com.shop.demoqa.testdata.ProductTestData;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,15 +26,17 @@ public class ProductTest extends BaseTest{
     @DisplayName("Verify Correct Display of Product Name on Product Page.")
     @Order(1)
     public void ShouldDisplayCorrectProductNameOnProductPage(){
-        assertEquals(ProductTestData.ACTUAL_PRODUCT_NAME, productPage.getProductName());
+        assertEquals("RED SATIN ROUND NECK BACKLESS MAXI DRESS",
+                productPage.getProductName());
     }
 
     @Test
     @DisplayName("Add Product to Cart Successfully.")
     @Order(2)
     public void ShouldSuccessfullyAddProductToCart(){
-        productPage.addProductToCartAndGoToCartPage(ProductTestData.PRODUCT_COLOR_RED, ProductTestData.PRODUCT_SIZE_LARGE, ProductTestData.TYPE_PRODUCT_COUNT);
-        assertEquals(ProductTestData.PRODUCT_NAME_ADDED_TO_CART, cartPage.getProductName());
+        productPage.addProductToCartAndGoToCartPage("red", "large", "5");
+        assertEquals("RED SATIN ROUND NECK BACKLESS MAXI DRESS - RED",
+                cartPage.getProductName());
     }
 
     @Test
@@ -44,7 +45,8 @@ public class ProductTest extends BaseTest{
     public void ShouldNotAddProductToCartWithoutVariants(){
         productPage.setRequiredInformation("", "", "1");
         productPage.clickEnter();
-        assertEquals(ProductTestData.ALERT_MESSAGE, productPage.getAlert());
+        assertEquals("Please select some product options before adding this product to your cart.",
+                productPage.getAlert());
         productPage.dismissAlert();
     }
 
