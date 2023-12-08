@@ -1,7 +1,6 @@
 package com.shop.demoqa.tests;
 
 import com.shop.demoqa.pages.LoginPage;
-import com.shop.demoqa.testdata.LoginTestData;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,24 +22,27 @@ public class LoginTest extends BaseTest {
     @DisplayName("Verify Successful Login With A Valid Username And Password.")
     @Order(1)
     public void ShouldBeAbleToLoginWithValidUsernameAndValidPassword(){
-        loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.VALID_PASSWORD);
-        assertEquals(LoginTestData.VALID_LOGIN_MESSAGE, loginPage.getSuccessLoginMessage());
+        loginPage.setLogin("validusername", "validpassword123*-*");
+        assertEquals("Hello validusername (not validusername? Log out)",
+                loginPage.getSuccessLoginMessage());
     }
 
     @Test
     @DisplayName("Verify Login Failure With An Empty Username.")
     @Order(2)
     public void ShouldNotBeAbleToLoginWithEmptyUsername(){
-        loginPage.setLogin("", LoginTestData.VALID_PASSWORD);
-        assertEquals(LoginTestData.MISSING_USERNAME_MESSAGE, loginPage.getInvalidLoginErrorMessage());
+        loginPage.setLogin("", "validpassword123*-*");
+        assertEquals("Error: Username is required.",
+                loginPage.getInvalidLoginErrorMessage());
     }
 
     @Test
     @DisplayName("Verify Login Failure With An Empty Password.")
     @Order(3)
     public void ShouldNotBeAbleToLoginWithEmptyPassword(){
-        loginPage.setLogin(LoginTestData.VALID_USERNAME, "");
-        assertEquals(LoginTestData.MISSING_PASSWORD_MESSAGE, loginPage.getInvalidLoginErrorMessage());
+        loginPage.setLogin("validusername", "");
+        assertEquals("Error: The password field is empty.",
+                loginPage.getInvalidLoginErrorMessage());
 
     }
 
@@ -48,24 +50,27 @@ public class LoginTest extends BaseTest {
     @DisplayName("Verify Login Failure With A Valid Username And An Invalid Password.")
     @Order(4)
     public void ShouldNotBeAbleToLoginWithValidUsernameAndInvalidPassword(){
-        loginPage.setLogin(LoginTestData.VALID_USERNAME, LoginTestData.INVALID_PASSWORD);
-        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginErrorMessage());
+        loginPage.setLogin("validusername", "invalidPass");
+        assertEquals("ERROR: The username or password you entered is incorrect. Lost your password?",
+                loginPage.getInvalidLoginErrorMessage());
     }
 
     @Test
     @DisplayName("Verify Login Failure With An Invalid Username And An Valid Password.")
     @Order(5)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndValidPassword(){
-        loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.VALID_PASSWORD);
-        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginErrorMessage());
+        loginPage.setLogin("invalidUser", "validpassword123*-*");
+        assertEquals("ERROR: The username or password you entered is incorrect. Lost your password?",
+                loginPage.getInvalidLoginErrorMessage());
     }
 
     @Test
     @DisplayName("Verify Login Failure With An Invalid Username And An Invalid Password.")
     @Order(6)
     public void ShouldNotBeAbleToLoginWithInvalidUsernameAndInvalidPassword(){
-        loginPage.setLogin(LoginTestData.INVALID_USERNAME, LoginTestData.INVALID_PASSWORD);
-        assertEquals(LoginTestData.INVALID_LOGIN_MESSAGE, loginPage.getInvalidLoginErrorMessage());
+        loginPage.setLogin("invalidUser", "invalidPass");
+        assertEquals("ERROR: The username or password you entered is incorrect. Lost your password?",
+                loginPage.getInvalidLoginErrorMessage());
     }
 
     @AfterEach
